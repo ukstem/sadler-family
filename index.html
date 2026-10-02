@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sadler Family Tree — From Rajasthan to Hanover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="home" data-multipage="1">
+<header>
+  <div class="hwrap">
+    <div class="wordmark">The Sadler Family<small>Rajasthan · 1846 · Hanover, Jamaica</small></div>
+    <nav><a href="index.html" class="active">Home</a><a href="tree.html" class="">Tree</a><a href="people.html" class="">People</a><a href="timeline.html" class="">Timeline</a><a href="branches.html" class="">Branches</a><a href="stories.html" class="">Stories</a><a href="review.html" class="">Data review</a></nav>
+    <div class="searchbox">
+      <input id="search" type="search" placeholder="Search a name…" aria-label="Search family members">
+      <div class="sresults" id="sresults"></div>
+    </div>
+  </div>
+</header>
+<main>
+<section id="view-home-anchor">
+  <div class="hero">
+    <p class="eyebrow">A living family archive</p>
+    <h1>One family. Three continents. <em>Seven recorded generations.</em></h1>
+    <p class="lede">In 1846, a young couple left Rajasthan, India, and crossed two oceans to the parish of Hanover, Jamaica. Their son Daniel — surveyor, philosopher, astrologer, teacher — married Elizabeth Malcolm of Castle Heights, and together they raised twelve children. This is their family, traced as far as the records and memories reach.</p>
+  </div>
+
+  <div class="journey" aria-label="The family journey">
+    <div class="jline">
+      <div class="jstop">
+        <div class="yr">1846</div>
+        <div class="place">Rajasthan, India</div>
+        <p>Daniel's parents leave India under indenture, bound for the Caribbean.</p>
+      </div>
+      <div class="jarrow">⟶</div>
+      <div class="jstop">
+        <div class="yr">1846 →</div>
+        <div class="place">Kew Estates, Hanover</div>
+        <p>His father works as a bookkeeper on the estate of the Sadler family — the origin of the surname.</p>
+      </div>
+      <div class="jarrow">⟶</div>
+      <div class="jstop">
+        <div class="yr">1903</div>
+        <div class="place">Jericho &amp; beyond</div>
+        <p>Daniel and Elizabeth marry. Twelve children carry the family into the present day.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="homecta">
+    <a class="btn primary" href="tree.html">Explore the tree</a>
+    <a class="btn ghost" href="stories.html">Read the stories</a>
+  </div>
+
+  <div class="legend branchlegend"></div>
+
+  <div class="homenote card" style="margin-top:34px;padding:22px 24px">
+    <h3>Now woven from two records</h3>
+    <p>This archive merges the <strong>master family database</strong> (begun 2013–16), the
+    <strong>family document</strong> of 2026, and <strong>oral-history notes</strong> taken in conversation
+    with an older family member. Where the sources disagree — and they do — nothing is silently corrected:
+    every conflict is flagged on the person’s record and gathered on the
+    <a href="review.html">Data review</a> page for the family to settle together.
+    Names marked with * carry an inferred surname; dashed tree cards are people shown twice;
+    the ⛑ flag marks records with an open question.</p>
+  </div></section>
+</main>
+<footer>
+  The Sadler Family Archive · woven from the master database, the family document &amp; oral history
+  <div class="fm">Bullarkie · Malcolm · Sadler · Bigby · Patterson · Gordon · Bucknor · Aiken</div>
+</footer>
+<script src="assets/data.js"></script>
+<script>
+(function(){document.querySelectorAll('.branchlegend').forEach(function(l){
+l.innerHTML=Object.keys(BRANCH).map(function(k){return '<span><i class="dot" style="background:'+BRANCH[k].hex+'"></i>'+BRANCH[k].name+'</span>';}).join('');});})();
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

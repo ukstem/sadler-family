@@ -1,0 +1,201 @@
+HOW TO ADD PHOTOS
+==================
+
+Drop a JPG photo into this "photos" folder, named after the person's id.
+The site picks it up automatically - no code changes needed.
+Example: a photo of Daniel Sadler must be saved as   photos/daniel.jpg
+Square-ish photos look best (they are shown as circles).
+
+ID              PERSON
+--              ------
+aaliyah         Aaliyah Jordan
+adele           Adele Bucknor
+adlyn           Adlyn Brissit
+amos1           Amos Gordon
+amos2           Amos Gordon
+anne            Anne (Christiana) Bullarkie
+annemarie       Anne Marie Richards
+annie           Annie Sadler
+anotherson      Unnamed Richards  (Recorded in the master data as “Another Son Rich)
+april           April Sadler
+ashanti         Ashanti Phillips
+avis            Avis Sadler
+baldwin         Baldwin Bucknor
+bell            Bell Bucknor
+berte           Berte Sadler
+berte-d         Unnamed Sadler  (Daughter of Berte Sadler; name not yet recorded.)
+berte-gd        Unnamed  (Daughter of Berte’s daughter — Berte’s granddaug)
+bevan           Bevan Patrick
+beverley        Beverley Sadler
+brissit0        Unnamed Brissit  (The earliest recorded member of the Brissit line)
+bull-father     Bullarkie (Daniel’s father)
+bull-mother     Bullarkie (Daniel’s mother)
+canute          Canute Sadler
+carmen          Carmen Sadler
+cecilia         Cecilia Miller
+chadwick        Chadwick Wynter
+christine       Christine Sadler
+claire          Claire Sadler
+cleopatra       Cleopatra Gordon
+clifford        Clifford Sadler
+clive           Clive Bucknor
+csmith          Clifford Smith
+daniel          Daniel Sadler
+debbie          Debbie Sadler
+deborah         Deborah Gordon
+devon           Devon Gordon
+dgreenaway      Daniel Greenaway
+dionne          Dionne Aiken
+dominique       Dominique Richards
+dorith          Dorith Duncan
+dossy           Dossy Richards
+elaine          Elaine Patterson
+eliz-mother     Elizabeth’s mother
+elizabeth       Elizabeth Sadler
+enid            Enid Sadler
+epsi            Epsi Patterson
+erskd1          Unnamed Sadler  (Daughter #1 of Erskine Sadler; name unknown (pla)
+erskd2          Unnamed Sadler  (Daughter #2 of Erskine Sadler; name unknown.)
+erskd3          Unnamed Sadler  (Daughter #3 of Erskine Sadler; name unknown.)
+erskine         Erskine Sadler
+eugeni          Eugeni Bucknor
+faye            Faye Richards
+fredrick        Fredrick Aiken
+gary            Gary Sadler
+garygd          Gary Gordon Duncan
+gertrude        Gertrude Sadler
+glen-s          Glen Sadler
+glenb           Glen Bucknor
+gracep          Grace Patterson
+grey            Grey Bucknor
+griselda        Griselda Aiken
+harboury        Harboury Sadler
+harboury-w      Unnamed  (Wife of Harboury Sadler; name not recorded.)
+hazel           Hazel Sadler
+hazelene        Hazelene Phillips
+hb0             Vivian Bigby
+hb1             Ted Bigby
+hb2             Michael Bigby
+hb3             Beryl Bigby
+hb4             Hugh Bigby
+hb5             Rollin Bigby
+hb6             Vonnie Bigby
+hb7             Antonio Bigby
+helen           Helen Bucknor
+herbert         Herbert Sadler
+herga           Herga Sadler
+herman          Herman Sadler
+hesra           Hesra Sadler
+hilda           Hilda Sadler
+hortence        Hortence Sadler
+hueburt         Hueburt Sadler
+india           India Greenaway
+irene           Irene Samual
+janelle         Janelle Samual
+jayon           Jayon
+jeff            Jeff Samual
+jenny           Jenny Bucknor
+joeg            Joe Gordon
+jonah           Jonah Oliver Sadler
+joy             Joy Grant
+karen           Karen Sadler
+karl            Karl Sadler
+kay             Kay Sadler
+ken             Ken
+kevin           Kevin Sadler
+kevin-c1        Unnamed Sadler  (Child of Kevin and Tamika; name not yet recorded)
+kevin-c2        Unnamed Sadler  (Child of Kevin and Tamika; name not yet recorded)
+kingsley        Kingsley Sadler
+kingsley139     Kingsley Sadler
+kurt            Kurt Sadler
+kyle            Kyle Sadler
+kyle-c1         Unnamed Sadler  (Child of Kyle Sadler; name not yet recorded.)
+kyle-p          Unnamed  (Partner of Kyle Sadler; name not yet recorded.)
+lailaj          Laila Jordan
+lamark          La mark Aiken
+lauren          Lauren Sadler
+lauris          Lauris Patterson
+lbigby          Lester Bigby
+leila           Leila Sadler
+lester          Lester Sadler
+lilian          Lilian Sadler
+linda           Linda Berg
+lisa            Lisa Sadler
+lisa-c          Unnamed  (Child of Lisa and Ken; name not yet recorded.)
+louis           Louis Sadler
+lucal           Lucal Richards
+lucas           Lucas Richards
+luceal          Luceal Samual
+madere          Madere Bucknor
+malcolm-father  Malcolm (Elizabeth’s father)
+malcolm-gf      Malcolm (senior)
+manman          Manman Bucknor
+marcia          Marcia Gordon
+marie-l         Marie
+marie-m         Marie Sadler
+mark            Mark Sadler
+martel          Martel Aiken
+mary            Mary Sadler
+melissa         Melissa Sadler
+merle           Merle Gordon
+mertyl          Mertyl Gordon
+miap            Mia Phillips
+michael         Michael Sadler
+michelle        Michelle Sadler
+michelle-c      Michelle Sadler
+mildred         Mildred Aiken
+monte           Montaque Sadler
+nanny           Nanny Sadler
+noita           Noita Sadler
+norman          Norman Gordon
+norris          Norris Sadler
+nylah           Nylah Greenaway
+oiliver         Oiliver Samual
+ophelia         Ophelia Sadler
+owen            Owen Sadler
+owenb           Owen Bucknor
+oweng           Owen Gordon
+palma           Palma Bucknor
+palty           Palty Sadler
+paula           Paula Gordon
+paulg           Paul Gordon
+persephone      Persephone Morling
+rayna           Rayna Greenaway
+reece           Reece Samual
+reginol         Reginol Patterson
+romel           Romel Sadler
+rosemary        Rosemary Grant
+ruel            Ruel Sadler
+rupert          Rupert Morling
+ruphas          Ruphas Richards
+sam-unnamed     Unnamed Samual  (Child of Irene Samual; name not recorded.)
+scotsman        Scotsman Gordon
+sg-unnamed      Unnamed Gordon  (Child of Scotsman Gordon; name not recorded.)
+sharon          Sharon Gordon
+shaun           Shaun Jordan
+shona           Shona Sadler
+shona-c1        Unnamed Sadler  (Child of Shona Sadler; name not yet recorded.)
+shona-c2        Unnamed Sadler  (Child of Shona Sadler; name not yet recorded.)
+simone          Simone Sadler
+sophia          Sophia Sadler
+stephanie       Stephanie Sadler
+stephen         Stephen Sadler
+steve           Steve Sadler
+susanne         Susanne Gordon
+tamika          Tamika
+tashan          Tashan Jordan
+teddy           Edward Morling
+tevin           Tevin Topias Sadler
+theodore        Theodore Sadler
+trevor          Trevor Sadler
+trevor-d        Moesha Sadler
+trevor-s        Unnamed Sadler  (Son of Trevor Sadler; name not yet recorded.)
+troy            Troy Henrick Sadler
+trudi           Trudi Wynter
+unnamed155      Unnamed Sadler  (A child of Jonah recorded in the master database)
+uriah           Uriah Patrick
+veronica        Veronica Aiken
+wilfrid         Wilfrid Bucknor
+wilson          Wilson Gordon
+winnie          Winnie Sadler
+wynter          Unnamed Wynter  (Partner of Carmen Sadler; surname Wynter, given )
