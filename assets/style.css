@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :root{
   --paper:#F2EEE2;        /* cane paper */
   --card:#FBF9F1;
@@ -45,9 +31,9 @@ header{position:sticky;top:0;z-index:40;background:var(--ink);color:var(--paper)
 .wordmark{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.02em;white-space:nowrap}
 .wordmark small{display:block;font-family:var(--mono);font-weight:400;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#C9C39F}
 nav{display:flex;gap:2px;flex-wrap:wrap}
-nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav a,nav button{background:none;border:none;color:#DDD8C2;padding:8px 11px;font-size:.85rem;letter-spacing:.04em;border-radius:4px}
-nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav a:hover,nav button:hover{color:#fff;background:rgba(255,255,255,.08)}
-nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav a.active,nav button.active{color:var(--ink);background:var(--marigold);font-weight:700}
+nav a,nav button{background:none;border:none;color:#DDD8C2;padding:8px 11px;font-size:.85rem;letter-spacing:.04em;border-radius:4px}
+nav a:hover,nav button:hover{color:#fff;background:rgba(255,255,255,.08)}
+nav a.active,nav button.active{color:var(--ink);background:var(--marigold);font-weight:700}
 .searchbox{margin-left:auto;position:relative;min-width:200px;flex:1;max-width:290px}
 .searchbox input{width:100%;padding:8px 12px;border-radius:6px;border:1px solid #4A4D3E;background:#33362A;color:var(--paper);font-family:var(--body);font-size:.9rem}
 .searchbox input::placeholder{color:#9B9E88}
@@ -89,7 +75,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.12}
 .stat .n{font-family:var(--display);font-size:2.1rem;font-weight:700;color:var(--green)}
 .stat .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
 .homecta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{border:none;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;text-decoration:none;display:inline-block;text-align:center;border-radius:8px;padding:12px 20px;font-weight:700;font-size:.95rem}
+.btn{border:none;text-decoration:none;display:inline-block;text-align:center;border-radius:8px;padding:12px 20px;font-weight:700;font-size:.95rem}
 .btn.primary{background:var(--green);color:#fff}
 .btn.primary:hover{background:#254230}
 .btn.ghost{background:none;border:1.5px solid var(--ink);color:var(--ink)}
@@ -233,468 +219,81 @@ details.xnotes[open] summary::after{content:'–'}
 
 .onepage-sec{margin-bottom:70px}
 
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
 
-.onepage-sec{margin-bottom:70px}
+/* ---------- zoom controls (tree) ---------- */
+.zoomctl{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:8px;z-index:5}
+.zoomctl button{width:44px;height:44px;border-radius:10px;border:1px solid var(--rule);background:var(--card);
+  color:var(--ink);font-size:1.25rem;font-weight:700;line-height:1;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(38,41,31,.14)}
+.zoomctl button:active{background:var(--green-soft)}
+.hint-touch{display:none}
+@media (pointer:coarse){ .hint-touch{display:inline} .hint-mouse{display:none} }
 
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
+/* ---------- touch devices (iOS & Android) ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:rgba(201,138,18,.18)}
+button,a,.pnode,.pcard,summary{touch-action:manipulation}
+#treeWrap,#treeSVG{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;overscroll-behavior:contain}
+#panel{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+/* no "stuck" hover effects after a tap on phones */
+@media (hover:none){
+  .pcard:hover{transform:none;box-shadow:0 2px 6px rgba(38,41,31,.06)}
+  .pnode:hover rect{stroke:var(--rule);stroke-width:1}
+  .pnode.selected rect{stroke:var(--ink);stroke-width:2.5}
+  nav a:hover{background:none;color:#DDD8C2}
+  nav a.active:hover{color:var(--ink);background:var(--marigold)}
+  .btn.ghost:hover{background:none;color:var(--ink)}
+  .chip:hover,.zbtn:hover,.sresults button:hover{background:inherit}
+  .pcard:active{transform:scale(.985)}
+}
 
-.onepage-sec{margin-bottom:70px}
+/* ---------- small screens ---------- */
+@media (max-width:700px){
+  /* compact header: wordmark + search on one row, nav as a swipeable strip */
+  header{position:relative}
+  .hwrap{padding:8px max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));gap:8px 10px}
+  .wordmark{font-size:1rem;flex:0 0 auto}
+  .wordmark small{font-size:.52rem;letter-spacing:.16em}
+  .searchbox{order:2;flex:1 1 140px;min-width:0;max-width:none;margin-left:0}
+  .searchbox input{font-size:16px;padding:9px 12px;min-height:40px}   /* 16px stops iOS auto-zooming on focus */
+  .sresults{position:fixed;left:10px;right:10px;top:auto;max-height:55vh}
+  .sresults button{padding:12px 14px}
+  nav{order:3;flex:0 0 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    margin:0 calc(-1 * max(12px,env(safe-area-inset-left)));padding:2px max(12px,env(safe-area-inset-left)) 8px;scroll-snap-type:x proximity}
+  nav::-webkit-scrollbar{display:none}
+  nav a{flex:0 0 auto;padding:9px 13px;font-size:.9rem;scroll-snap-align:start}
 
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
+  main{padding:0 max(14px,env(safe-area-inset-left)) 70px}
+  .pagehead{padding:22px 0 6px;margin-bottom:16px}
+  .pagehead p{font-size:.92rem}
+  .hero{padding:34px 0 18px}
 
-.onepage-sec{margin-bottom:70px}
+  /* tree fills most of the screen */
+  section#view-tree-anchor .pagehead p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  section#view-tree-anchor .pagehead p.expanded{display:block}
+  #treeWrap{height:calc(100vh - 150px);height:calc(100svh - 150px);min-height:380px;border-radius:10px;margin:0 -4px}
+  .legend{gap:8px 12px;margin-top:14px;font-size:.78rem}
 
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
+  /* person record becomes a bottom sheet */
+  #panel{top:auto;left:0;width:100%;max-height:88vh;max-height:88dvh;border-left:none;border-top:5px solid var(--green);
+    border-radius:18px 18px 0 0;transform:translateY(105%);box-shadow:0 -14px 40px rgba(38,41,31,.3);
+    padding-bottom:env(safe-area-inset-bottom)}
+  #panel.open{transform:translateY(0)}
+  #panel::before{content:"";display:block;width:42px;height:5px;border-radius:99px;background:var(--rule);margin:8px auto 0}
+  .pan-head{padding:14px 18px 14px}
+  .pan-head h3{font-size:1.4rem;padding-right:44px}
+  .pan-close{top:12px;right:12px;width:40px;height:40px}
+  .pan-body{padding:14px 18px 40px}
+  .pathfind select{font-size:16px;min-height:44px}
+  .chip{padding:7px 13px}
 
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
-
-.onepage-sec{margin-bottom:70px}
-
-/* ---------- photos / avatars ---------- */
-.avatar{position:relative;border-radius:50%;overflow:hidden;flex:0 0 auto;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:700;color:#fff;letter-spacing:.02em;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcard .cardtop{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.pan-head .headtop{display:flex;align-items:center;gap:16px}
-nav a{display:inline-block;text-decoration:none}
-/* ---------- ghost nodes (same person shown twice) ---------- */
-.pnode.ghostnode rect:first-of-type{stroke-dasharray:5 4;fill:#FBF9F0}
-.pnode.ghostnode .pname{fill:#6E6E5C}
-/* ---------- expandable notes ---------- */
-details.xnotes{margin:14px 0 6px;border:1px solid #E2DDC9;border-radius:10px;background:#FBF9F0}
-details.xnotes summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;
-  font-size:.92rem;color:var(--green);list-style:none;position:relative}
-details.xnotes summary::-webkit-details-marker{display:none}
-details.xnotes summary::after{content:'+';position:absolute;right:14px;font-weight:700}
-details.xnotes[open] summary::after{content:'–'}
-.xnotes-body{padding:2px 14px 12px;border-top:1px dashed #E2DDC9}
-.srctags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
-.srctag{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:#EFEADA;
-  border:1px solid #E2DDC9;border-radius:999px;padding:3px 10px;color:#5C5C4A}
-.xnote{font-size:.85rem;line-height:1.6;color:var(--ink-soft);margin:8px 0}
-.flaglist{margin:8px 0 2px}
-.flagline{font-size:.85rem;line-height:1.55;color:#8A5B00;background:#F7EED7;border-left:3px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:7px 10px;margin:6px 0}
-.flagmark{color:var(--gold);font-size:.85em}
-/* ---------- review resolved / section labels ---------- */
-.review.resolved{opacity:.72;border-left:4px solid var(--green)}
-.review.resolved h3::after{content:' ✓';color:var(--green)}
-.genlabel.small{font-size:15px;letter-spacing:.14em}
-#peopleCount{font-size:.85rem;color:var(--ink-soft);margin:-6px 0 14px}
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -14px 18px;padding:2px 14px 6px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:0 0 auto;padding:9px 15px}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .pcard{padding:14px}
+  .pcard h3{font-size:1rem}
+  .story,.review{padding:18px}
+  footer{padding:22px 16px calc(22px + env(safe-area-inset-bottom))}
+}
+@media (max-width:420px){ .grid{grid-template-columns:1fr} .wordmark small{display:none} }

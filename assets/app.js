@@ -101,6 +101,28 @@ function firstName(p){ return p.name.split(' ')[0]; }
 function shortChip(p){ let n=p.name; if(n.length>26)n=n.slice(0,25)+'…'; return n; }
 function closePanel(){ $('#panel').classList.remove('open'); $('#scrim').classList.remove('open'); if(typeof clearHighlight==='function' && $('#treeSVG')) clearHighlight(); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closePanel(); });
+/* swipe the person record down to close it (bottom sheet on phones) */
+(function(){
+  let y0=null, dy=0;
+  document.addEventListener('touchstart',e=>{
+    const pan=document.getElementById('panel'); if(!pan||!pan.classList.contains('open')||!pan.contains(e.target)) return;
+    if(pan.scrollTop>0 || innerWidth>700) return;
+    y0=e.touches[0].clientY; dy=0; pan.style.transition='none';
+  },{passive:true});
+  document.addEventListener('touchmove',e=>{
+    if(y0===null) return; dy=Math.max(0,e.touches[0].clientY-y0);
+    document.getElementById('panel').style.transform=dy?`translateY(${dy}px)`:'';
+  },{passive:true});
+  document.addEventListener('touchend',()=>{
+    if(y0===null) return; const pan=document.getElementById('panel');
+    pan.style.transition=''; pan.style.transform='';
+    if(dy>90) closePanel(); y0=null;
+  });
+})();
+/* tree intro text: clamped on phones, tap to read it all */
+document.addEventListener('click',e=>{
+  const p=e.target.closest('#view-tree-anchor .pagehead p'); if(p) p.classList.toggle('expanded');
+});
 
 function tracePath(fromId,toId){
   const out=$('#pathOut');
@@ -356,13 +378,74 @@ function initCamera(dims){
   dims2=dims;
   fitTrunk();
   const svg=$('#treeSVG'); const wrap=$('#treeWrap');
-  let drag=null;
-  svg.addEventListener('pointerdown',e=>{ drag={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y}; svg.classList.add('dragging'); svg.setPointerCapture(e.pointerId); });
-  svg.addEventListener('pointermove',e=>{ if(!drag)return; cam.x=drag.cx+(e.clientX-drag.x); cam.y=drag.cy+(e.clientY-drag.y); applyCam(); });
-  svg.addEventListener('pointerup',()=>{ drag=null; svg.classList.remove('dragging'); });
-  svg.addEventListener('wheel',e=>{ e.preventDefault(); zoomAt(e.offsetX,e.offsetY, e.deltaY<0?1.12:0.89); },{passive:false});
-  $('#zin').onclick=()=>zoomAt(wrap.clientWidth/2,wrap.clientHeight/2,1.25);
-  $('#zout').onclick=()=>zoomAt(wrap.clientWidth/2,wrap.clientHeight/2,0.8);
+  /* --- touch / mouse / pen: one pointer pans, two pointers pinch-zoom --- */
+  const pts=new Map();            // active pointers: id -> {x,y} (client coords)
+  let gesture=null;               // snapshot taken when the pointer count changes
+  let moved=false, lastTap=0, lastTapXY=null;
+  const TAP_SLOP=8;               // px a finger may wander and still count as a tap
+  const local=(x,y)=>{ const r=svg.getBoundingClientRect(); return {x:x-r.left,y:y-r.top}; };
+  function snapshot(){
+    const a=[...pts.values()];
+    if(a.length===1){ gesture={mode:'pan',sx:a[0].x,sy:a[0].y,cx:cam.x,cy:cam.y}; }
+    else if(a.length>=2){
+      const [p,q]=a; const m=local((p.x+q.x)/2,(p.y+q.y)/2);
+      gesture={mode:'pinch',d:Math.hypot(q.x-p.x,q.y-p.y)||1,mx:m.x,my:m.y,cx:cam.x,cy:cam.y,k:cam.k};
+    } else gesture=null;
+  }
+  svg.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='mouse' && e.button!==0) return;
+    if(e.isPrimary) pts.clear();   // a new first finger starts a fresh gesture (drops any lost pointers)
+    pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pts.size===1) moved=false; else moved=true;   // a second finger is never a tap
+    snapshot();
+  });
+  svg.addEventListener('pointermove',e=>{
+    if(!pts.has(e.pointerId)) return;
+    pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(!gesture) return;
+    if(gesture.mode==='pan'){
+      const dx=e.clientX-gesture.sx, dy=e.clientY-gesture.sy;
+      if(!moved && Math.hypot(dx,dy)<TAP_SLOP) return;
+      if(!moved){ moved=true; svg.classList.add('dragging'); try{svg.setPointerCapture(e.pointerId);}catch(_){} }
+      cam.x=gesture.cx+dx; cam.y=gesture.cy+dy; applyCam();
+    } else {
+      const [p,q]=[...pts.values()];
+      const m=local((p.x+q.x)/2,(p.y+q.y)/2);
+      const nk=clampK(gesture.k*Math.hypot(q.x-p.x,q.y-p.y)/gesture.d);
+      // keep the point under the fingers' starting midpoint fixed, then follow the midpoint (two-finger pan)
+      cam.x=m.x-(gesture.mx-gesture.cx)*(nk/gesture.k);
+      cam.y=m.y-(gesture.my-gesture.cy)*(nk/gesture.k);
+      cam.k=nk; applyCam();
+    }
+  });
+  function endPointer(e){
+    if(!pts.has(e.pointerId)) return;
+    pts.delete(e.pointerId);
+    if(pts.size===0){
+      svg.classList.remove('dragging'); gesture=null;
+      // double-tap (touch) zooms in on the tapped spot
+      if(!moved && e.pointerType!=='mouse' && e.type==='pointerup' && !e.target.closest('.pnode')){
+        const now=Date.now(), l=local(e.clientX,e.clientY);
+        if(now-lastTap<320 && lastTapXY && Math.hypot(l.x-lastTapXY.x,l.y-lastTapXY.y)<30){ zoomAt(l.x,l.y,1.8,true); lastTap=0; }
+        else { lastTap=now; lastTapXY=l; }
+      }
+    } else snapshot();   // lifting one finger of a pinch continues as a pan with the other
+  }
+  svg.addEventListener('pointerup',endPointer);
+  svg.addEventListener('pointercancel',endPointer);
+  // swallow the click that follows a drag so panning across a card doesn't open it
+  svg.addEventListener('click',e=>{ if(moved){ e.stopPropagation(); e.preventDefault(); } },true);
+  // Safari fires its own gesture events for pinch; stop them zooming the whole page while over the tree
+  ['gesturestart','gesturechange','gestureend'].forEach(t=>wrap.addEventListener(t,e=>e.preventDefault(),{passive:false}));
+  // mouse wheel + trackpad pinch (browsers report trackpad pinch as ctrl+wheel)
+  svg.addEventListener('wheel',e=>{
+    e.preventDefault();
+    const l=local(e.clientX,e.clientY);
+    const dy=e.deltaMode===1?e.deltaY*16:e.deltaY;
+    zoomAt(l.x,l.y,Math.exp(-dy*(e.ctrlKey?0.01:0.0015)));
+  },{passive:false});
+  $('#zin').onclick=()=>zoomAt(wrap.clientWidth/2,wrap.clientHeight/2,1.35,true);
+  $('#zout').onclick=()=>zoomAt(wrap.clientWidth/2,wrap.clientHeight/2,1/1.35,true);
   $('#zfit').onclick=fitAll;
   const zt=$('#ztrunk'); if(zt) zt.onclick=fitTrunk;
 }
@@ -377,16 +460,22 @@ function fitTrunk(){
   // open on Daniel & Elizabeth with their children readable
   const wrap=$('#treeWrap');
   const d=solidPos['daniel'];
-  cam.k=0.55;
+  cam.k=wrap.clientWidth<700?0.8:0.55;   // phones open closer so names are readable
   cam.x=wrap.clientWidth/2-(d.x+NW)*cam.k;
   cam.y=60-(d.y-GY)*cam.k;
   applyCam();
 }
-function zoomAt(px,py,f){
-  const nk=Math.min(2.4,Math.max(0.03,cam.k*f));
-  cam.x=px-(px-cam.x)*(nk/cam.k);
-  cam.y=py-(py-cam.y)*(nk/cam.k);
-  cam.k=nk; applyCam();
+function clampK(k){ return Math.min(2.4,Math.max(0.03,k)); }
+function zoomAt(px,py,f,animate){
+  const nk=clampK(cam.k*f);
+  const target={k:nk, x:px-(px-cam.x)*(nk/cam.k), y:py-(py-cam.y)*(nk/cam.k)};
+  if(!animate || matchMedia('(prefers-reduced-motion: reduce)').matches){ cam=target; applyCam(); return; }
+  const from={...cam}, t0=performance.now(), dur=220;
+  (function step(t){
+    const u=Math.min(1,(t-t0)/dur), s=1-Math.pow(1-u,3);
+    cam={k:from.k+(target.k-from.k)*s, x:from.x+(target.x-from.x)*s, y:from.y+(target.y-from.y)*s};
+    applyCam(); if(u<1) requestAnimationFrame(step);
+  })(t0);
 }
 function centerOn(id){
   const wrap=$('#treeWrap'); const p=solidPos[id]; if(!p)return;
